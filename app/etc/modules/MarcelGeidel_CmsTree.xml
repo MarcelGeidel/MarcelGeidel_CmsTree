@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<config>
+	<modules>
+		<MarcelGeidel_CmsTree>
+			<active>true</active>
+			<codePool>local</codePool>
+			<version>1.0.0</version>
+			<depends>
+                <Mage_Adminhtml/>
+                <Mage_Catalog/>
+                <Mage_Cms/>
+            </depends>
+		</MarcelGeidel_CmsTree>
+	</modules>
+</config>

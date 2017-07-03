@@ -1,0 +1,15 @@
+<?php $storeID = (int) Mage::app()->getRequest()->getParam('store_id', Mage::helper('marcelgeidel_cmstree')->getDefaultStoreView()); ?>
+
+<div class="content-header skip-header" id="content_header">
+    <table cellspacing="0">
+        <tr>
+            <td><h3 id="content_header_text"><?php echo $this->getHeaderText() ?></h3></td>
+            <td class="form-buttons">
+				<button title="<?php echo $this->__('Add New Page') ?>" type="button" class="scalable add" 
+						onclick="setLocation('<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/cms_page/new', array('store_id' => $storeID)); ?>')">
+					<span><span><span><?php echo $this->__('Add New Page') ?></span></span></span>
+				</button>
+            </td>
+        </tr>
+    </table>
+</div>

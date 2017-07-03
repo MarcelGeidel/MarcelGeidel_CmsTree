@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+
+<layout version="0.1.0">
+
+    <cmstree>
+        <reference name="head">
+        	<action method="addCss"><name>marcelgeidel/cmstree/css/skin/ui.fancytree.css</name></action>
+        	<action method="addCss"><name>marcelgeidel/cmstree/css/style.css</name></action>
+        	
+        	<action method="addItem"><type>skin_js</type><name>marcelgeidel/cmstree/js/jquery.min.js</name></action>
+        	<action method="addItem"><type>skin_js</type><name>marcelgeidel/cmstree/js/jquery-ui.min.js</name></action>
+        	
+        	<action method="addItem"><type>skin_js</type><name>marcelgeidel/cmstree/js/jquery.fancytree.js</name></action>
+        	<action method="addItem"><type>skin_js</type><name>marcelgeidel/cmstree/js/jquery.fancytree.dnd.js</name></action>
+        	<action method="addItem"><type>skin_js</type><name>marcelgeidel/cmstree/js/jquery.fancytree.edit.js</name></action>
+        </reference>
+    </cmstree>
+    
+	<adminhtml_cms_page_index>
+	
+		<update handle="cmstree"/>
+		
+		<reference name="left">
+			<block name="page.tree" type="marcelgeidel_cmstree/adminhtml_cms_page_tree" template="marcelgeidel/cmstree/cms/page/index/tree.phtml" />
+		</reference>
+		
+		<reference name="cms_page">
+			<action method="setTemplate"><template>marcelgeidel/cmstree/cms/page/index/content.phtml</template></action>
+		</reference>
+
+	</adminhtml_cms_page_index>
+
+	<adminhtml_cms_page_edit>
+	
+		<update handle="cmstree"/>
+		
+		<reference name="left">
+			<block name="page.tree" type="marcelgeidel_cmstree/adminhtml_cms_page_tree" template="marcelgeidel/cmstree/cms/page/edit/tree.phtml" />
+		</reference>
+
+	</adminhtml_cms_page_edit>
+
+</layout>

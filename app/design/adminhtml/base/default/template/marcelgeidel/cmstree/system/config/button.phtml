@@ -1,0 +1,13 @@
+<script type="text/javascript">
+//<![CDATA[
+	function resetTree()
+	{
+		if (confirm("<?php echo $this->__('Really reset?') ?>"))
+		{
+			new Ajax.Request("<?php echo $this->getAjaxUrl() ?>", {method: 'get'});
+		}
+	}
+//]]>
+</script>
+
+<?php echo $this->getButtonHtml() ?>
