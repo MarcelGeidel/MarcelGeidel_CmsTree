@@ -19,6 +19,8 @@ class MarcelGeidel_CmsTree_Block_Adminhtml_Cms_Page_Tree extends Mage_Adminhtml_
 	
 	public function getTreeHtml($tree = null, $parentID = 0)
 	{
+		$html = '';
+		
 		if (!$tree)
 		{
 			$tree = $this->getCurrentTree();
