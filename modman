@@ -1,0 +1,6 @@
+app/code/local/MarcelGeidel/CmsTree app/code/local/MarcelGeidel/CmsTree
+app/design/adminhtml/base/default/layout/marcelgeidel/cmstree.xml app/design/adminhtml/base/default/layout/marcelgeidel/cmstree.xml
+app/design/adminhtml/base/default/template/marcelgeidel/cmstree app/design/adminhtml/base/default/template/marcelgeidel/cmstree
+app/etc/modules/MarcelGeidel_CmsTree.xml app/etc/modules/MarcelGeidel_CmsTree.xml
+app/locale/de_DE/MarcelGeidel_CmsTree.csv app/locale/de_DE/MarcelGeidel_CmsTree.csv
+skin/adminhtml/base/default/marcelgeidel/cmstree skin/adminhtml/base/default/marcelgeidel/cmstree
