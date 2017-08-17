@@ -136,7 +136,9 @@ class MarcelGeidel_CmsTree_Model_Tree extends Mage_Core_Model_Abstract
 		
 		if ($cmsPage and $cmsPage->getId())
 		{
-			if (in_array($this->storeID, $cmsPage->getStoreId()))
+			$storeIDs = $cmsPage->getStoreId();
+			
+			if (in_array(0, $storeIDs) or in_array($this->storeID, $storeIDs))
 			{
 				return true;
 			}
