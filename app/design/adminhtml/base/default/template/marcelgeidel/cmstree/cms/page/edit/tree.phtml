@@ -1,11 +1,9 @@
-<?php $currentStoreID = $this->getCurrentStoreID(); ?>
-
-<p class="switcher" style="margin-top: -1px;border-top: 1px solid #bebebe;">
+<p class="switcher">
 	<label for="store_switcher"><?php echo $this->__('Choose Store View:') ?></label>
 	<select name="store_switcher" id="store_switcher" class="left-col-block" onchange="location = this.value;">
 	
 		<?php foreach (Mage::helper('marcelgeidel_cmstree')->getStores() as $store): ?>
-		<option value="<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/cms_page/index', array('store_id' => $store->getId())); ?>" <?php echo $store->getId() == $currentStoreID ? 'selected' : '' ?> class="even"><?php echo $store->getName(); ?></option>
+		<option value="<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/cms_page/index', array('store_id' => $store->getId())); ?>" <?php echo $store->getId() == $this->getCurrentStoreID() ? 'selected' : '' ?> class="even"><?php echo $store->getName(); ?></option>
 		<?php endforeach; ?>
 		
 	</select>
@@ -13,70 +11,13 @@
 </p>
 
 <div class="button-wrapper">
-	<button title="<?php echo $this->__('Add New Page') ?>" type="button" class="scalable add" style="margin: 10px 23px;" 
-			onclick="setLocation('<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/cms_page/new', array('store_id' => $store->getId())); ?>')">
+	<button title="<?php echo $this->__('Add New Page') ?>" type="button" class="scalable add" onclick="setLocation('<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/cms_page/new', array('store_id' => $store->getId())); ?>')">
 		<span><span><span><?php echo $this->__('Add New Page') ?></span></span></span>
 	</button>
 </div>
 
 <div id="tree">
-	<?php echo $this->getTreeHtml(); ?>
+	<?php echo $this->getTreeHtml() ?>
 </div>
 
-<script>
-jQuery('#tree').fancytree(
-{
-	extensions: ["dnd", "edit"],
-	dnd:
-	{
-		autoExpandMS: 400,
-		focusOnClick: false,
-		preventVoidMoves: true,
-		preventRecursiveMoves: true,
-		dragStart: function(node, data)
-		{
-			return true;
-		},
-		dragEnter: function(node, data)
-		{
-			return true;
-		},
-		dragDrop: function(node, data)
-		{
-			var loaderArea = $$('#html-body .wrapper')[0];
-			Position.clone($(loaderArea), $('loading-mask'), {offsetLeft:-2});
-			toggleSelectsUnderBlock($('loading-mask'), false);
-			jQuery('#loading-mask').show();
-
-			jQuery.post("<?php echo Mage::getUrl('adminhtml/cms_page/saveTree') ?>",
-			{
-				form_key: "<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>",
-				store_id: <?php echo $currentStoreID; ?>,
-				node_id: data.otherNode.data.id,
-				target_node_id: data.node.data.id,
-				hit_mode: data.hitMode
-			})
-			.always(function(data)
-			{
-				if (!data.result)
-				{
-					alert("<?php echo $this->__('CmsTree: An error occurred while saving') ?>");
-				}
-
-				jQuery('#loading-mask').hide();
-			});
-
-			data.otherNode.moveTo(node, data.hitMode);
-		}
-	},
-	activate: function(event, data)
-	{
-		var node = data.node;
-
-		if (node.data.href)
-		{
-			window.open(node.data.href, node.data.target);
-		}
-	}
-});
-</script>
+<?php echo $this->getChildHtml('script') ?>

@@ -21,7 +21,9 @@
 		<update handle="cmstree"/>
 		
 		<reference name="left">
-			<block name="page.tree" type="marcelgeidel_cmstree/adminhtml_cms_page_tree" template="marcelgeidel/cmstree/cms/page/index/tree.phtml" />
+			<block type="marcelgeidel_cmstree/adminhtml_cms_page_tree" name="page.tree" template="marcelgeidel/cmstree/cms/page/index/tree.phtml">
+				<block type="marcelgeidel_cmstree/adminhtml_cms_page_tree" name="page.tree.script" as="script" template="marcelgeidel/cmstree/cms/page/script.phtml" />
+			</block>
 		</reference>
 		
 		<reference name="cms_page">
@@ -35,7 +37,9 @@
 		<update handle="cmstree"/>
 		
 		<reference name="left">
-			<block name="page.tree" type="marcelgeidel_cmstree/adminhtml_cms_page_tree" template="marcelgeidel/cmstree/cms/page/edit/tree.phtml" />
+			<block type="marcelgeidel_cmstree/adminhtml_cms_page_tree" name="page.tree" template="marcelgeidel/cmstree/cms/page/edit/tree.phtml">
+				<block type="marcelgeidel_cmstree/adminhtml_cms_page_tree" name="page.tree.script" as="script" template="marcelgeidel/cmstree/cms/page/script.phtml" />
+			</block>
 		</reference>
 
 	</adminhtml_cms_page_edit>
