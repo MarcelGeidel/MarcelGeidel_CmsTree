@@ -34,9 +34,19 @@ class MarcelGeidel_CmsTree_Block_Adminhtml_Cms_Page_Tree extends Mage_Adminhtml_
 			
 			foreach ($nodes as $node)
 			{
-				$class = $node['page_id'] == $this->getCurrentPageID() ? 'selected' : '';
+				$class = array();
 				
-				$html .= '<li data-id="' . $node['page_id'] . '" class="' . $class . '">';
+				if ($this->isCurrentPage($node))
+				{
+					$class[] = 'selected';
+				}
+				
+				if ($this->isExpanded($node, $tree))
+				{
+					$class[] = 'expanded';
+				}
+				
+				$html .= '<li data-id="' . $node['page_id'] . '" class="' . implode(' ', $class) . '">';
 				
 				$link = Mage::helper('adminhtml')->getUrl('adminhtml/cms_page/edit', array('store_id' => $this->getCurrentStoreID(), 'page_id' => $node['page_id']));
 				
@@ -51,5 +61,30 @@ class MarcelGeidel_CmsTree_Block_Adminhtml_Cms_Page_Tree extends Mage_Adminhtml_
 		}
 		
 		return $html;
+	}
+	
+	public function isCurrentPage($node)
+	{
+		if ($node['page_id'] == $this->getCurrentPageID())
+		{
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public function isExpanded($node, $tree)
+	{
+		$nodes = $tree->getNodes($node['page_id']);
+		
+		foreach ($nodes as $child)
+		{
+			if ($this->isCurrentPage($child) or $this->isExpanded($child, $tree))
+			{
+				return true;
+			}
+		}
+		
+		return false;
 	}
 }
