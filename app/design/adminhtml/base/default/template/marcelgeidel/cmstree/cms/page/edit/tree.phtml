@@ -11,7 +11,7 @@
 </p>
 
 <div class="button-wrapper">
-	<button title="<?php echo $this->__('Add New Page') ?>" type="button" class="scalable add" onclick="setLocation('<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/cms_page/new', array('store_id' => $store->getId())); ?>')">
+	<button title="<?php echo $this->__('Add New Page') ?>" type="button" class="scalable add" onclick="setLocation('<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/cms_page/new', array('store_id' => $this->getCurrentStoreID())); ?>')">
 		<span><span><span><?php echo $this->__('Add New Page') ?></span></span></span>
 	</button>
 </div>
