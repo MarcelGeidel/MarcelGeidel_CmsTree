@@ -4,15 +4,15 @@
 
     <cmstree>
         <reference name="head">
-        	<action method="addCss"><name>marcelgeidel/cmstree/css/skin/ui.fancytree.css</name></action>
-        	<action method="addCss"><name>marcelgeidel/cmstree/css/style.css</name></action>
+        	<action method="addItem"><type>js_css</type><name>jquery/plugin-fancytree/skin/ui.fancytree.css</name></action>
+        	<action method="addItem"><type>js_css</type><name>jquery/plugin-fancytree/style.css</name></action>
         	
-        	<action method="addItem"><type>skin_js</type><name>marcelgeidel/cmstree/js/jquery.min.js</name></action>
-        	<action method="addItem"><type>skin_js</type><name>marcelgeidel/cmstree/js/jquery-ui.min.js</name></action>
+        	<action method="addItem"><type>js</type><name>jquery/jquery-1.12.4.min.js</name></action>
+        	<action method="addItem"><type>js</type><name>jquery-ui-1.12.1.min.js</name></action>
         	
-        	<action method="addItem"><type>skin_js</type><name>marcelgeidel/cmstree/js/jquery.fancytree.js</name></action>
-        	<action method="addItem"><type>skin_js</type><name>marcelgeidel/cmstree/js/jquery.fancytree.dnd.js</name></action>
-        	<action method="addItem"><type>skin_js</type><name>marcelgeidel/cmstree/js/jquery.fancytree.edit.js</name></action>
+        	<action method="addItem"><type>js</type><name>jquery/plugin-fancytree/jquery.fancytree.js</name></action>
+        	<action method="addItem"><type>js</type><name>jquery/plugin-fancytree/jquery.fancytree.dnd.js</name></action>
+        	<action method="addItem"><type>js</type><name>jquery/plugin-fancytree/jquery.fancytree.edit.js</name></action>
         </reference>
     </cmstree>
     

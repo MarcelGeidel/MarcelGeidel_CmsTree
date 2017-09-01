@@ -3,4 +3,6 @@ app/design/adminhtml/base/default/layout/marcelgeidel/cmstree.xml app/design/adm
 app/design/adminhtml/base/default/template/marcelgeidel/cmstree app/design/adminhtml/base/default/template/marcelgeidel/cmstree
 app/etc/modules/MarcelGeidel_CmsTree.xml app/etc/modules/MarcelGeidel_CmsTree.xml
 app/locale/de_DE/MarcelGeidel_CmsTree.csv app/locale/de_DE/MarcelGeidel_CmsTree.csv
-skin/adminhtml/base/default/marcelgeidel/cmstree skin/adminhtml/base/default/marcelgeidel/cmstree
+js/jquery/jquery-1.12.4.min.js js/jquery/jquery-1.12.4.min.js
+js/jquery/jquery-ui-1.12.1.min js/jquery/jquery-ui-1.12.1.min
+js/jquery/plugin-fancytree js/jquery/plugin-fancytree
