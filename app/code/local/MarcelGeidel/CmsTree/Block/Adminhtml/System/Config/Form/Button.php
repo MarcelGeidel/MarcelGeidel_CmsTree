@@ -11,9 +11,9 @@ class MarcelGeidel_CmsTree_Block_Adminhtml_System_Config_Form_Button
     public function getButtonHtml()
     {
         $buttonData = array(
-                                                                                          'id'      => 'reset_tree',
+            'id'      => 'reset_tree',
             'label'   => $this->helper('marcelgeidel_cmstree')->__('Reset'),
-                                                                                          'onclick' => 'javascript:resetTree(); return false;',
+            'onclick' => 'javascript:resetTree(); return false;',
         );
         $button     = $this->getLayout()->createBlock('adminhtml/widget_button')->setData($buttonData);
 
@@ -22,9 +22,9 @@ class MarcelGeidel_CmsTree_Block_Adminhtml_System_Config_Form_Button
 
     protected function _construct()
     {
-        parent::_construct();
-
         $this->setTemplate('marcelgeidel/cmstree/system/config/button.phtml');
+
+        parent::_construct();
     }
 
     protected function _getElementHtml(Varien_Data_Form_Element_Abstract $element)
