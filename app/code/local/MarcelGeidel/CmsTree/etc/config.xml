@@ -2,104 +2,104 @@
 
 <config>
 
-	<modules>
-		<MarcelGeidel_CmsTree>
-			<version>1.0.0</version>
-		</MarcelGeidel_CmsTree>
-	</modules>
-	
-	<global>
-		
-		<blocks>
-		
-			<marcelgeidel_cmstree>
+    <modules>
+        <MarcelGeidel_CmsTree>
+            <version>1.0.0</version>
+        </MarcelGeidel_CmsTree>
+    </modules>
+
+    <global>
+
+        <blocks>
+
+            <marcelgeidel_cmstree>
                 <class>MarcelGeidel_CmsTree_Block</class>
             </marcelgeidel_cmstree>
-            
+
             <page>
-            	<rewrite>
-            		<html_breadcrumbs>MarcelGeidel_CmsTree_Block_Breadcrumbs</html_breadcrumbs>
-            	</rewrite>
+                <rewrite>
+                    <html_breadcrumbs>MarcelGeidel_CmsTree_Block_Breadcrumbs</html_breadcrumbs>
+                </rewrite>
             </page>
 
-		</blocks>
-		
-		<helpers>
-			<marcelgeidel_cmstree>
-				<class>MarcelGeidel_CmsTree_Helper</class>
-			</marcelgeidel_cmstree>
-		</helpers>
-		
-		<models>
-			<marcelgeidel_cmstree>
+        </blocks>
+
+        <helpers>
+            <marcelgeidel_cmstree>
+                <class>MarcelGeidel_CmsTree_Helper</class>
+            </marcelgeidel_cmstree>
+        </helpers>
+
+        <models>
+            <marcelgeidel_cmstree>
                 <class>MarcelGeidel_CmsTree_Model</class>
             </marcelgeidel_cmstree>
-		</models>
-		
-		<resources>
-			<marcelgeidel_cmstree_setup>
-				<setup>
-					<module>MarcelGeidel_CmsTree</module>
-					<class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
-				</setup>
-			</marcelgeidel_cmstree_setup>
-		</resources>
-		
-		<events>
+        </models>
 
-			<page_block_html_topmenu_gethtml_before>
-				<observers>
-					<marcelgeidel_cmstree_topmenu_gethtml_before>
-						<type>singleton</type>
-						<class>MarcelGeidel_CmsTree_Model_Observer</class>
-						<method>updateMenu</method>
-					</marcelgeidel_cmstree_topmenu_gethtml_before>
-				</observers>
-			</page_block_html_topmenu_gethtml_before>
+        <resources>
+            <marcelgeidel_cmstree_setup>
+                <setup>
+                    <module>MarcelGeidel_CmsTree</module>
+                    <class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
+                </setup>
+            </marcelgeidel_cmstree_setup>
+        </resources>
 
-			<controller_action_layout_render_before_cms_page_view>
-				<observers>
-					<marcelgeidel_cmstree_before_cms_page_view>
-						<type>singleton</type>
-						<class>MarcelGeidel_CmsTree_Model_Observer</class>
-						<method>updateBreadcrumbs</method>
-					</marcelgeidel_cmstree_before_cms_page_view>
-				</observers>
-			</controller_action_layout_render_before_cms_page_view>
-			
-			<cms_page_save_after>
-				<observers>
-					<marcelgeidel_cmstree_cms_page_save_after>
-						<class>MarcelGeidel_CmsTree_Model_Observer</class>
-						<method>updateCmsTree</method>
-					</marcelgeidel_cmstree_cms_page_save_after>
-				</observers>
-			</cms_page_save_after>
+        <events>
 
-			<cms_page_delete_commit_after>
-				<observers>
-					<marcelgeidel_cmstree_cms_page_delete_commit_after>
-						<class>MarcelGeidel_CmsTree_Model_Observer</class>
-						<method>updateCmsTree</method>
-					</marcelgeidel_cmstree_cms_page_delete_commit_after>
-				</observers>
-			</cms_page_delete_commit_after>
-			
-			<adminhtml_cms_page_edit_tab_main_prepare_form>
-				<observers>
-					<marcelgeidel_cmstree_adminhtml_cms_page_edit>
-						<type>singleton</type>
-						<class>MarcelGeidel_CmsTree_Model_Observer</class>
-						<method>addCmsPageField</method>
-					</marcelgeidel_cmstree_adminhtml_cms_page_edit>
-				</observers>
-			</adminhtml_cms_page_edit_tab_main_prepare_form>
-			
+            <page_block_html_topmenu_gethtml_before>
+                <observers>
+                    <marcelgeidel_cmstree_topmenu_gethtml_before>
+                        <type>singleton</type>
+                        <class>MarcelGeidel_CmsTree_Model_Observer</class>
+                        <method>updateMenu</method>
+                    </marcelgeidel_cmstree_topmenu_gethtml_before>
+                </observers>
+            </page_block_html_topmenu_gethtml_before>
+
+            <controller_action_layout_render_before_cms_page_view>
+                <observers>
+                    <marcelgeidel_cmstree_before_cms_page_view>
+                        <type>singleton</type>
+                        <class>MarcelGeidel_CmsTree_Model_Observer</class>
+                        <method>updateBreadcrumbs</method>
+                    </marcelgeidel_cmstree_before_cms_page_view>
+                </observers>
+            </controller_action_layout_render_before_cms_page_view>
+
+            <cms_page_save_after>
+                <observers>
+                    <marcelgeidel_cmstree_cms_page_save_after>
+                        <class>MarcelGeidel_CmsTree_Model_Observer</class>
+                        <method>updateCmsTree</method>
+                    </marcelgeidel_cmstree_cms_page_save_after>
+                </observers>
+            </cms_page_save_after>
+
+            <cms_page_delete_commit_after>
+                <observers>
+                    <marcelgeidel_cmstree_cms_page_delete_commit_after>
+                        <class>MarcelGeidel_CmsTree_Model_Observer</class>
+                        <method>updateCmsTree</method>
+                    </marcelgeidel_cmstree_cms_page_delete_commit_after>
+                </observers>
+            </cms_page_delete_commit_after>
+
+            <adminhtml_cms_page_edit_tab_main_prepare_form>
+                <observers>
+                    <marcelgeidel_cmstree_adminhtml_cms_page_edit>
+                        <type>singleton</type>
+                        <class>MarcelGeidel_CmsTree_Model_Observer</class>
+                        <method>addCmsPageField</method>
+                    </marcelgeidel_cmstree_adminhtml_cms_page_edit>
+                </observers>
+            </adminhtml_cms_page_edit_tab_main_prepare_form>
+
         </events>
-        
-	</global>
-	
-	<admin>
+
+    </global>
+
+    <admin>
         <routers>
             <adminhtml>
                 <args>
@@ -110,9 +110,9 @@
             </adminhtml>
         </routers>
     </admin>
-    
-	<adminhtml>
-	
+
+    <adminhtml>
+
         <layout>
             <updates>
                 <marcelgeidel_cmstree>
@@ -120,17 +120,17 @@
                 </marcelgeidel_cmstree>
             </updates>
         </layout>
-        
+
         <translate>
-        	<modules>
-        		<marcelgeidel_cmstree>
-        			<files>
-        				<default>MarcelGeidel_CmsTree.csv</default>
-        			</files>
-        		</marcelgeidel_cmstree>
-        	</modules>
+            <modules>
+                <marcelgeidel_cmstree>
+                    <files>
+                        <default>MarcelGeidel_CmsTree.csv</default>
+                    </files>
+                </marcelgeidel_cmstree>
+            </modules>
         </translate>
 
-	</adminhtml>
-	
+    </adminhtml>
+
 </config>

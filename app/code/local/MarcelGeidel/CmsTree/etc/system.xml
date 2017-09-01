@@ -2,60 +2,60 @@
 
 <config>
 
-	<tabs>
-		<marcelgeidel translate="label" module="marcelgeidel_cmstree">
-			<label>MG-Tools</label>
-			<sort_order>1000</sort_order>
-		</marcelgeidel>
-	</tabs>
-	
-	<sections>
-		<marcelgeidel_cmstree translate="label" module="marcelgeidel_cmstree">
-			<label>CmsTree</label>
-			<tab>marcelgeidel</tab>
-			<frontend_type>text</frontend_type>
-			<sort_order>10</sort_order>
-			<show_in_default>1</show_in_default>
-			<show_in_website>1</show_in_website>
-			<show_in_store>1</show_in_store>
+    <tabs>
+        <marcelgeidel translate="label" module="marcelgeidel_cmstree">
+            <label>MG-Tools</label>
+            <sort_order>1000</sort_order>
+        </marcelgeidel>
+    </tabs>
 
-			<groups>
-				<general translate="label" module="marcelgeidel_cmstree">
-					<label>General</label>
-					<frontend_type>text</frontend_type>
-					<sort_order>10</sort_order>
-					<show_in_default>1</show_in_default>
-					<show_in_website>1</show_in_website>
-					<show_in_store>1</show_in_store>
+    <sections>
+        <marcelgeidel_cmstree translate="label" module="marcelgeidel_cmstree">
+            <label>CmsTree</label>
+            <tab>marcelgeidel</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
 
-					<fields>
-					
-						<default_storeview translate="label">
-							<label>Default Store View</label>
-							<frontend_type>select</frontend_type>
-							<source_model>marcelgeidel_cmstree/system_config_source_storeview</source_model>
-							<sort_order>10</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</default_storeview>
+            <groups>
+                <general translate="label" module="marcelgeidel_cmstree">
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
 
-						<reset_tree translate="label">
-							<label>Reset CmsTree</label>
-							<frontend_type>button</frontend_type>
-							<frontend_model>marcelgeidel_cmstree/adminhtml_system_config_form_button</frontend_model>
-							<sort_order>20</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
+                    <fields>
+
+                        <default_storeview translate="label">
+                            <label>Default Store View</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>marcelgeidel_cmstree/system_config_source_storeview</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </default_storeview>
+
+                        <reset_tree translate="label">
+                            <label>Reset CmsTree</label>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>marcelgeidel_cmstree/adminhtml_system_config_form_button</frontend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
                         </reset_tree>
-                        
-					</fields>
 
-				</general>
-			</groups>
+                    </fields>
 
-		</marcelgeidel_cmstree>
-	</sections>
+                </general>
+            </groups>
+
+        </marcelgeidel_cmstree>
+    </sections>
 
 </config>

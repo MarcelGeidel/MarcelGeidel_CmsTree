@@ -1,5 +1,7 @@
 <?php
 
+
+/** @var Mage_Catalog_Model_Resource_Eav_Mysql4_Setup $installer */
 $installer = $this;
 $installer->startSetup();
 
@@ -26,9 +28,8 @@ $installer->run($sql);
 
 Mage::app()->reinitStores();
 
-foreach (Mage::helper('marcelgeidel_cmstree')->getStores() as $store)
-{
-	Mage::getModel('marcelgeidel_cmstree/tree')->init($store->getId())->save();
+foreach (Mage::helper('marcelgeidel_cmstree')->getStores() as $store) {
+    Mage::getModel('marcelgeidel_cmstree/tree')->init($store->getId())->save();
 }
 
 $installer->endSetup();
