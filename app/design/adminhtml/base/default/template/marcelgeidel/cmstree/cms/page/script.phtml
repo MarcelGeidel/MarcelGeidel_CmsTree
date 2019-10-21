@@ -23,7 +23,7 @@ jQuery('#tree').fancytree(
 			toggleSelectsUnderBlock($('loading-mask'), false);
 			jQuery('#loading-mask').show();
 
-			jQuery.post("<?php echo Mage::getUrl('adminhtml/cms_page/saveTree') ?>",
+			jQuery.post("<?php echo Mage::getUrl('adminhtml/cmsTree/saveTree') ?>",
 			{
 				form_key: "<?php echo Mage::getSingleton('core/session')->getFormKey() ?>",
 				store_id: <?php echo $this->getCurrentStoreID() ?>,

@@ -1,9 +1,7 @@
-<?php
+<?php 
 
-require_once 'Mage/Adminhtml/controllers/Cms/PageController.php';
-
-class MarcelGeidel_CmsTree_Adminhtml_Cms_PageController extends Mage_Adminhtml_Cms_PageController
-{
+class MarcelGeidel_CmsTree_Adminhtml_CmsTreeController extends Mage_Adminhtml_Controller_Action
+{	
 	public function saveTreeAction()
     {
 		$storeID = $this->getRequest()->getParam('store_id');
@@ -21,7 +19,9 @@ class MarcelGeidel_CmsTree_Adminhtml_Cms_PageController extends Mage_Adminhtml_C
     
     public function resetTreeAction()
     {
-    	foreach (Mage::helper('marcelgeidel_cmstree')->getStores() as $store)
+        $stores = Mage::helper('marcelgeidel_cmstree')->getStores();
+        
+        foreach ($stores as $store)
     	{
     		Mage::getModel('marcelgeidel_cmstree/tree')->init($store->getId())->save();
     	}

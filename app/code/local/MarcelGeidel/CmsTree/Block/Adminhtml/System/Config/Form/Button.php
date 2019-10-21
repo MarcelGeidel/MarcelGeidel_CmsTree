@@ -16,7 +16,7 @@ class MarcelGeidel_CmsTree_Block_Adminhtml_System_Config_Form_Button extends Mag
     
     public function getAjaxUrl()
     {
-    	return Mage::helper('adminhtml')->getUrl('adminhtml/cms_page/resetTree');
+    	return Mage::helper('adminhtml')->getUrl('adminhtml/cmsTree/resetTree');
     }
     
     public function getButtonHtml()
