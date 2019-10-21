@@ -50,7 +50,7 @@ class MarcelGeidel_CmsTree_Model_Tree extends Mage_Core_Model_Abstract
 		return $menuNodes;
 	}
 	
-	public function load($storeID)
+	public function load($storeID, $field = null)
 	{
 		if (!$storeID)
 		{
