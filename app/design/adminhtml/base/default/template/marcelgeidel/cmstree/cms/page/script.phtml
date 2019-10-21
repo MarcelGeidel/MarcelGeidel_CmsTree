@@ -52,6 +52,10 @@ jQuery('#tree').fancytree(
 		{
 			window.open(node.data.href, node.data.target);
 		}
+	},
+	init: function(event, data)
+	{
+		jQuery('#tree').css('display', 'block');
 	}
 });
 </script>
