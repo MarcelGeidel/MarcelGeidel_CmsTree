@@ -4,7 +4,7 @@
 	<modules>
 		<MarcelGeidel_CmsTree>
 			<active>true</active>
-			<codePool>local</codePool>
+			<codePool>community</codePool>
 			<version>1.0.0</version>
 			<depends>
                 <Mage_Adminhtml/>
