@@ -5,7 +5,7 @@
 		<MarcelGeidel_CmsTree>
 			<active>true</active>
 			<codePool>community</codePool>
-			<version>1.0.0</version>
+			<version>1.0.1</version>
 			<depends>
                 <Mage_Adminhtml/>
                 <Mage_Catalog/>
